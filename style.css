@@ -1,0 +1,52 @@
+/* --- Configuración General --- */
+body {
+    background-color: #2c2c34; /* Fondo oscuro como en la imagen */
+    font-family: Arial, sans-serif;
+    
+    /* Centra el .game-card vertical y horizontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* --- El Contenedor Principal --- */
+.game-card {
+    /* Ancho del contenedor, puedes ajustarlo */
+    width: 90%; 
+    max-width: 800px; /* Un límite para pantallas grandes */
+}
+
+/* --- La Ventana del Juego (Caja gris) --- */
+.game-window {
+    position: relative;
+    background-color: #e0e0e0; /* Color gris claro */
+    border-radius: 16px;       /* Esquinas redondeadas */
+    overflow: hidden;          /* Esconde las esquinas del iframe */
+
+    /* Esto fuerza a que la caja mantenga una proporción 16:9 (como un video) */
+    aspect-ratio: 16 / 9;
+}
+
+/* --- El Iframe (El juego en sí) --- */
+.game-window iframe {
+    /* El iframe llena por completo la caja gris (.game-window) */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Sin bordes */
+}
+
+/* --- El Título (Caja azul) --- */
+.game-title {
+    background-color: #6a8dff; /* Color azul */
+    color: white;              /* Texto blanco */
+    padding: 10px 15px;        /* Espaciado interno */
+    border-radius: 8px;        /* Esquinas redondeadas leves */
+    margin-top: 12px;          /* Separación de la ventana del juego */
+    font-weight: bold;
+    font-size: 1.1em;
+}
