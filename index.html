@@ -3,33 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <title>Menú</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
-    <div class="game-card">
-        
-        <div class="game-window">
-            <iframe 
-                id="game-iframe" 
-                src="https://games.crazygames.com/es_ES/space-waves/index.html?skipPrerollFirstSession=true&amp;v=1.345" 
-                title="Space Waves" 
-                scrolling="no" 
-                allow="autoplay; payment; focus-without-user-activation *; screen-wake-lock; gamepad; clipboard-read; clipboard-write; accelerometer; gyroscope; " 
-                allowfullscreen="" 
-                sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-scripts allow-same-origin allow-downloads  allow-popups allow-popups-to-escape-sandbox" 
-                loading="eager" 
-                importance="high" 
-                data-hj-allow-iframe="true">
-                </iframe>
-        </div>
-
-        <div class="game-title">
-            Name game
-        </div>
-
-    </div>
-
+<body class="body-menu">
+    <h1 class="title-menu"><span class="span-title-menu">Game</span> Close</h1>
+    <main class="games-menu">
+        <a class="btn-game" id="game-space" href="game-play.html"><img class="img-game" src="https://imgs.crazygames.com/space-waves_1x1/20241203031650/space-waves_1x1-cover?format=auto&quality=100&metadata=none&width=1200" alt="imagen-juego"></a>
+        <a class="btn-game" id="game-smash"><img class="img-game" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAdrpTBNT0iI8zuPF0NX0z6t9fJtigQpEhsQ&s" alt="imagen-juego"></a>
+        <a class="btn-game" id="game-soccer"><img class="img-game" src="https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=204,height=204,fit=cover,f=auto/7336e7ac04f8c0a88fac674d112ad77c/football-legends.png" alt="imagen-juego"></a>
+    </main>
+<script src="index-script.js"></script>
 </body>
 </html>
