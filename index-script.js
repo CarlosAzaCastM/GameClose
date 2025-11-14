@@ -10,7 +10,7 @@ const games = {
 
 const btn1 = document.getElementById("game-space")
 const btn2 = document.getElementById("game-smash")
-const btn3 = document.getElementById("game-soccer")
+const btn3 = document.getElementById("game-stick")
 const btn4 = document.getElementById("game-pong")
 const btn5 = document.getElementById("game-snake")
 const btn6 = document.getElementById("game-mine")

@@ -59,7 +59,7 @@ body {
 }
 
 .title-menu {
-    font-size: 3.5em;
+    font-size: 3.8em;
     color: #E6E6E6;
     margin: 90px;
     margin-top: 70px;
@@ -79,7 +79,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 50%;
     gap: 50px;
 }
 
