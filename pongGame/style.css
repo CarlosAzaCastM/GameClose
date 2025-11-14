@@ -1,0 +1,16 @@
+/* Reseteamos márgenes y centramos todo */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    background-color: #FF4C4C; /* Un fondo oscuro */
+}
+
+/* Estilo del lienzo del juego */
+canvas {
+    background-color: #000; /* Fondo negro para el juego */
+    border: 2px solid #ecf0f1; /* Un borde blanco */
+}

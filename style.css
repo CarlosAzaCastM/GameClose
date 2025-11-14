@@ -51,11 +51,11 @@ body {
 .game-title {
     background-color: #FF4C4C; 
     color: white;              
-    padding: 10px 15px;        
+    padding: 15px 20px;        
     border-radius: 8px;        
     margin-top: 12px;          
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.5em;
 }
 
 .title-menu {
