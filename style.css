@@ -19,6 +19,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    padding-top: 89px;
 }
 
 /* --- El Contenedor Principal --- */
@@ -50,7 +51,7 @@ body {
 /* --- El Título (Caja azul) --- */
 .game-title {
     background-color: #FF4C4C; 
-    color: white;              
+    color: #E6E6E6;              
     padding: 15px 20px;        
     border-radius: 8px;        
     margin-top: 12px;          
@@ -63,6 +64,8 @@ body {
     color: #E6E6E6;
     margin: 90px;
     margin-top: 70px;
+    cursor: pointer;
+    user-select: none;
 }
 
 .title-menu:hover {
@@ -92,6 +95,14 @@ body {
     border-bottom: 4px solid #FF4C4C;
 }
 
+.game-hidden {
+    display: none;
+}
+
+.secret-game {
+    display: none;
+}
+
 .img-game:hover{
     transform: rotate(360deg);
     transition: 0.7s;
@@ -111,3 +122,91 @@ body {
     border-radius: 15px;
     opacity: 70%;
 }
+
+.lista-categorias{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    list-style-type: none;
+    cursor: pointer;
+    font-size: 1.7em;
+    color: #E6E6E6;
+}
+
+.nav-menu{
+    width: 100%;
+    background: radial-gradient(at 47.966219997892225% 59.17791208933168%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%), radial-gradient(at 47.64933301345313% 82.3942086004094%, hsla(0, 6.25%, 18.823529411764707%, 1) 0%, hsla(0, 6.25%, 18.823529411764707%, 0) 100%), radial-gradient(at 95.4924348957064% 30.991218769813667%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 1) 0%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 0) 100%), radial-gradient(at 33.063428122547755% 63.915493762477546%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 1) 0%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 0) 100%), radial-gradient(at 15.148471558648247% 8.345630190076857%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%);            ;
+    opacity: 50%;
+    position: fixed; 
+    top: 0;          
+    left: 0;         
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-menu-hidden {
+    transform: translateY(-100%);
+}
+
+.category-element {
+    user-select: none;
+    position: relative;
+}
+
+.category-element::after{
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    z-index: 1500;
+    background: #FF4C4C;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.category-element:hover{
+    transform: scaleX(1.3);
+    transition: .4s;
+    background-color: radial-gradient(at 47.966219997892225% 59.17791208933168%, rgb(28, 31, 33) 0%, hsla(192, 7%, 13%, 0) 100%), radial-gradient(at 47.64933301345313% 82.3942086004094%, hsla(0, 6.25%, 18.823529411764707%, 1) 0%, hsla(0, 10%, 14%, 0) 100%), radial-gradient(at 95.4924348957064% 30.991218769813667%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 1) 0%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 0) 100%), radial-gradient(at 33.063428122547755% 63.915493762477546%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 1) 0%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 0) 100%), radial-gradient(at 15.148471558648247% 8.345630190076857%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%);            ;
+    padding: 10px;
+}
+
+.category-element:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.category-element:active{
+    transform: scale(1.5);
+    transition: .25s;
+}
+
+.footer {
+    margin-top: 10vh;
+    width: 100%;
+    height: 10vh;
+    background: radial-gradient(at 47.966219997892225% 59.17791208933168%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%), radial-gradient(at 47.64933301345313% 82.3942086004094%, hsla(0, 6.25%, 18.823529411764707%, 1) 0%, hsla(0, 6.25%, 18.823529411764707%, 0) 100%), radial-gradient(at 95.4924348957064% 30.991218769813667%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 1) 0%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 0) 100%), radial-gradient(at 33.063428122547755% 63.915493762477546%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 1) 0%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 0) 100%), radial-gradient(at 15.148471558648247% 8.345630190076857%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%);            ;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    opacity: 50%;
+}
+
+.names-footer {
+    color: #E6E6E6;
+    font-size: 1.2em;
+}
+
+.confetti-gif {
+    position: absolute;
+    width: 100%;
+    opacity: 50%;
+}
+
+.confetti-gif-hidden {
+    display: none;
+} 

@@ -46,3 +46,99 @@ function goMine() {
     btn6.href = `game-play.html?game=${games["Mine"]}&name=Minesweeper`
 }
 
+// Variable para guardar la última posición de scroll
+let lastScrollTop = 0;
+
+// Selecciona tu barra de navegación
+const navbar = document.querySelector('.nav-menu');
+
+// Agrega un "escuchador" al evento de scroll de la ventana
+window.addEventListener('scroll', function() {
+    
+    // Obtiene la posición actual del scroll
+    // (usamos ambos por compatibilidad entre navegadores)
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        // --- El usuario está haciendo scroll hacia ABAJO ---
+        
+        // Añade la clase para ocultar el nav
+        navbar.classList.add('nav-menu-hidden');
+
+    } else {
+        // --- El usuario está haciendo scroll hacia ARRIBA ---
+        
+        // Quita la clase para mostrar el nav
+        navbar.classList.remove('nav-menu-hidden');
+    }
+    
+    // Actualiza la última posición de scroll para la próxima vez
+    // (con un 'if' para evitar que se ponga en negativo en Mac)
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+});
+
+const btnIframe = document.querySelector('#btn-iframe-category');
+const btnUnity = document.querySelector('#btn-unity-category');
+const btnJs = document.querySelector('#btn-javascript-category');
+const btnTitleMenu = document.querySelector('.title-menu')
+
+const allGames = document.querySelectorAll('.btn-game');
+
+const confettiGif = document.querySelector('.confetti-gif');
+
+const secretGame = document.querySelector('.secret-game')
+
+let clickCounter = 0;
+let clickTimer = null;
+const tripleClickDelay = 500;
+
+function filterGames(categoryGame) {
+    allGames.forEach(game => {
+        if(game.classList.contains(categoryGame)){
+            game.classList.remove('game-hidden');
+        }
+        else
+        {
+            game.classList.add('game-hidden');
+        }
+    });
+}
+
+btnIframe.addEventListener('click', () => {
+    filterGames('iframe-game');
+});
+
+btnUnity.addEventListener('click', () => {
+    filterGames('unity-game');
+});
+
+btnJs.addEventListener('click', () => {
+    filterGames('javascript-game');
+});
+
+btnTitleMenu.addEventListener('click', () => {
+    filterGames('btn-game');
+    clickCounter++;
+
+    clearTimeout(clickTimer);
+
+    if(clickCounter === 3)
+    {
+        miAccionSecreta();
+        clickCounter = 0;
+    }
+    else
+    {
+        clickTimer = setTimeout(()=>{
+            clickCounter = 0;
+        },tripleClickDelay);
+    }
+});
+
+function miAccionSecreta() {
+    confettiGif.classList.remove('confetti-gif-hidden');
+    secretGame.classList.remove('secret-game');
+    setTimeout(()=>{
+        confettiGif.classList.add('confetti-gif-hidden');
+    },4000);
+}
