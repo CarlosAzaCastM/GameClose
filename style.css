@@ -1,10 +1,9 @@
-
 body {
     background-color: #282833; 
     font-family: Arial, sans-serif;
 }
 
-.body-play {
+.page--play {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,34 +11,30 @@ body {
     margin: 0;
 }
 
-.body-menu {
+.page--menu {
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    padding-top: 89px;
+    padding-top: 89px; 
 }
 
-/* --- El Contenedor Principal --- */
-.game-card {
+.play-card {
     width: 90%; 
     max-width: 800px; 
 }
 
-/* --- La Ventana del Juego (Caja gris) --- */
-.game-window {
+.play-card__window {
     position: relative;
     background-color: #000000; 
     border-radius: 16px;       
     overflow: hidden;          
-
     aspect-ratio: 16 / 9;
 }
 
-/* --- El Iframe (El juego en sí) --- */
-.game-window iframe {
+.play-card__iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -48,18 +43,17 @@ body {
     border: none; 
 }
 
-/* --- El Título (Caja azul) --- */
-.game-title {
+.play-card__title {
     background-color: #FF4C4C; 
     color: #E6E6E6;              
-    padding: 15px 20px;        
-    border-radius: 8px;        
-    margin-top: 12px;          
+    padding: 15px 20px;         
+    border-radius: 8px;         
+    margin-top: 12px;           
     font-weight: bold;
     font-size: 1.5em;
 }
 
-.title-menu {
+.header-title {
     font-size: 3.8em;
     color: #E6E6E6;
     margin: 90px;
@@ -68,16 +62,16 @@ body {
     user-select: none;
 }
 
-.title-menu:hover {
+.header-title:hover {
     transform: scale(1.5);
     transition: .5s;
 }
 
-.span-title-menu {
+.header-title__span {
     color: #FF4C4C;
 }
 
-.games-menu {
+.game-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -86,34 +80,7 @@ body {
     gap: 50px;
 }
 
-.img-game {
-    margin: 0;
-    padding: 0;
-    width: 150px;
-    height: 150px;
-    border-radius: 15px;
-    border-bottom: 4px solid #FF4C4C;
-}
-
-.game-hidden {
-    display: none;
-}
-
-.secret-game {
-    display: none;
-}
-
-.img-game:hover{
-    transform: rotate(360deg);
-    transition: 0.7s;
-}
-
-.img-game:active{
-    transform: scale(1.3);
-    transition: 0.5s;
-}
-
-.btn-game {
+.game-card {
     margin: 0;
     padding: 0;
     cursor: pointer;
@@ -123,7 +90,49 @@ body {
     opacity: 70%;
 }
 
-.lista-categorias{
+.game-card__image {
+    margin: 0;
+    padding: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    border-bottom: 4px solid #FF4C4C;
+}
+
+.game-card__image:hover{
+    transform: rotate(360deg);
+    transition: 0.7s;
+}
+
+.game-card__image:active{
+    transform: scale(1.3);
+    transition: 0.5s;
+}
+
+.game-card--hidden {
+    display: none;
+}
+
+.game-card--secret {
+    display: none;
+}
+
+.nav {
+    width: 100%;
+    background: radial-gradient(at 47.966219997892225% 59.17791208933168%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%), radial-gradient(at 47.64933301345313% 82.3942086004094%, hsla(0, 6.25%, 18.823529411764707%, 1) 0%, hsla(0, 6.25%, 18.823529411764707%, 0) 100%), radial-gradient(at 95.4924348957064% 30.991218769813667%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 1) 0%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 0) 100%), radial-gradient(at 33.063428122547755% 63.915493762477546%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 1) 0%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 0) 100%), radial-gradient(at 15.148471558648247% 8.345630190076857%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%);
+    opacity: 50%;
+    position: fixed; 
+    top: 0;           
+    left: 0;          
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav--hidden {
+    transform: translateY(-100%);
+}
+
+.nav__list{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -134,27 +143,12 @@ body {
     color: #E6E6E6;
 }
 
-.nav-menu{
-    width: 100%;
-    background: radial-gradient(at 47.966219997892225% 59.17791208933168%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%), radial-gradient(at 47.64933301345313% 82.3942086004094%, hsla(0, 6.25%, 18.823529411764707%, 1) 0%, hsla(0, 6.25%, 18.823529411764707%, 0) 100%), radial-gradient(at 95.4924348957064% 30.991218769813667%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 1) 0%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 0) 100%), radial-gradient(at 33.063428122547755% 63.915493762477546%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 1) 0%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 0) 100%), radial-gradient(at 15.148471558648247% 8.345630190076857%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%);            ;
-    opacity: 50%;
-    position: fixed; 
-    top: 0;          
-    left: 0;         
-    z-index: 1000;
-    transition: transform 0.3s ease-in-out;
-}
-
-.nav-menu-hidden {
-    transform: translateY(-100%);
-}
-
-.category-element {
+.nav__item {
     user-select: none;
     position: relative;
 }
 
-.category-element::after{
+.nav__item::after{
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
     content: "";
@@ -168,19 +162,19 @@ body {
     width: 0;
 }
 
-.category-element:hover{
+.nav__item:hover{
     transform: scaleX(1.3);
     transition: .4s;
-    background-color: radial-gradient(at 47.966219997892225% 59.17791208933168%, rgb(28, 31, 33) 0%, hsla(192, 7%, 13%, 0) 100%), radial-gradient(at 47.64933301345313% 82.3942086004094%, hsla(0, 6.25%, 18.823529411764707%, 1) 0%, hsla(0, 10%, 14%, 0) 100%), radial-gradient(at 95.4924348957064% 30.991218769813667%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 1) 0%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 0) 100%), radial-gradient(at 33.063428122547755% 63.915493762477546%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 1) 0%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 0) 100%), radial-gradient(at 15.148471558648247% 8.345630190076857%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%);            ;
+    background-color: radial-gradient(at 47.966219997892225% 59.17791208933168%, rgb(28, 31, 33) 0%, hsla(192, 7%, 13%, 0) 100%), radial-gradient(at 47.64933301345313% 82.3942086004094%, hsla(0, 6.25%, 18.823529411764707%, 1) 0%, hsla(0, 10%, 14%, 0) 100%), radial-gradient(at 95.4924348957064% 30.991218769813667%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 1) 0%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 0) 100%), radial-gradient(at 33.063428122547755% 63.915493762477546%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 1) 0%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 0) 100%), radial-gradient(at 15.148471558648247% 8.345630190076857%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%);
     padding: 10px;
 }
 
-.category-element:hover::after {
+.nav__item:hover::after {
     width: 100%;
     left: 0;
 }
 
-.category-element:active{
+.nav__item:active{
     transform: scale(1.5);
     transition: .25s;
 }
@@ -189,24 +183,24 @@ body {
     margin-top: 10vh;
     width: 100%;
     height: 10vh;
-    background: radial-gradient(at 47.966219997892225% 59.17791208933168%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%), radial-gradient(at 47.64933301345313% 82.3942086004094%, hsla(0, 6.25%, 18.823529411764707%, 1) 0%, hsla(0, 6.25%, 18.823529411764707%, 0) 100%), radial-gradient(at 95.4924348957064% 30.991218769813667%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 1) 0%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 0) 100%), radial-gradient(at 33.063428122547755% 63.915493762477546%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 1) 0%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 0) 100%), radial-gradient(at 15.148471558648247% 8.345630190076857%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%);            ;
+    background: radial-gradient(at 47.966219997892225% 59.17791208933168%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%), radial-gradient(at 47.64933301345313% 82.3942086004094%, hsla(0, 6.25%, 18.823529411764707%, 1) 0%, hsla(0, 6.25%, 18.823529411764707%, 0) 100%), radial-gradient(at 95.4924348957064% 30.991218769813667%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 1) 0%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 0) 100%), radial-gradient(at 33.063428122547755% 63.915493762477546%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 1) 0%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 0) 100%), radial-gradient(at 15.148471558648247% 8.345630190076857%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%);
     display: flex;
     justify-content: center; 
     align-items: center;
     opacity: 50%;
 }
 
-.names-footer {
+.footer__names {
     color: #E6E6E6;
     font-size: 1.2em;
 }
 
-.confetti-gif {
+.confetti {
     position: absolute;
     width: 100%;
     opacity: 50%;
 }
 
-.confetti-gif-hidden {
+.confetti--hidden {
     display: none;
-} 
+}

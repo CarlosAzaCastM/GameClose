@@ -1,6 +1,6 @@
 const games = {
     "SmashKarts" : "https://games.crazygames.com/en_US/smash-karts/index.html?v=1.345",
-    "SpaceWaves" : "https://games.crazygames.com/es_ES/space-waves/index.html?skipPrerollFirstSession=true&amp;v=1.345",
+    "SpaceWaves" : "https://games.crazygames.com/es_ES/space-waves/index.html?skipPrerollFirstSession=true&v=1.345",
     "Stickman" : "https://games.crazygames.com/en_US/count-masters-stickman-games/index.html?v=1.345",
     "Pong" : "pongGame/index.html",
     "Snake" : "snakeGame/index.html",
@@ -46,78 +46,65 @@ function goMine() {
     btn6.href = `game-play.html?game=${games["Mine"]}&name=Minesweeper`
 }
 
-// Variable para guardar la última posición de scroll
 let lastScrollTop = 0;
 
-// Selecciona tu barra de navegación
-const navbar = document.querySelector('.nav-menu');
+const navbar = document.querySelector('.nav');
 
-// Agrega un "escuchador" al evento de scroll de la ventana
 window.addEventListener('scroll', function() {
-    
-    // Obtiene la posición actual del scroll
-    // (usamos ambos por compatibilidad entre navegadores)
+
     let scrollTop = window.scrollY || document.documentElement.scrollTop;
 
     if (scrollTop > lastScrollTop) {
-        // --- El usuario está haciendo scroll hacia ABAJO ---
-        
-        // Añade la clase para ocultar el nav
-        navbar.classList.add('nav-menu-hidden');
+
+        navbar.classList.add('nav--hidden');
 
     } else {
-        // --- El usuario está haciendo scroll hacia ARRIBA ---
-        
-        // Quita la clase para mostrar el nav
-        navbar.classList.remove('nav-menu-hidden');
+        navbar.classList.remove('nav--hidden');
     }
-    
-    // Actualiza la última posición de scroll para la próxima vez
-    // (con un 'if' para evitar que se ponga en negativo en Mac)
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
 });
 
 const btnIframe = document.querySelector('#btn-iframe-category');
 const btnUnity = document.querySelector('#btn-unity-category');
 const btnJs = document.querySelector('#btn-javascript-category');
-const btnTitleMenu = document.querySelector('.title-menu')
+const btnTitleMenu = document.querySelector('.header-title') 
 
-const allGames = document.querySelectorAll('.btn-game');
+const allGames = document.querySelectorAll('.game-card'); 
 
-const confettiGif = document.querySelector('.confetti-gif');
+const confettiGif = document.querySelector('.confetti'); 
 
-const secretGame = document.querySelector('.secret-game')
+const secretGame = document.querySelector('.game-card--secret') 
 
 let clickCounter = 0;
 let clickTimer = null;
 const tripleClickDelay = 500;
 
-function filterGames(categoryGame) {
+function filterGames(category) { 
     allGames.forEach(game => {
-        if(game.classList.contains(categoryGame)){
-            game.classList.remove('game-hidden');
+        if(game.classList.contains(category)){
+            game.classList.remove('game-card--hidden'); 
         }
         else
         {
-            game.classList.add('game-hidden');
+            game.classList.add('game-card--hidden'); 
         }
     });
 }
 
 btnIframe.addEventListener('click', () => {
-    filterGames('iframe-game');
+    filterGames('game-card--iframe'); 
 });
 
 btnUnity.addEventListener('click', () => {
-    filterGames('unity-game');
+    filterGames('game-card--unity'); 
 });
 
 btnJs.addEventListener('click', () => {
-    filterGames('javascript-game');
+    filterGames('game-card--javascript'); 
 });
 
 btnTitleMenu.addEventListener('click', () => {
-    filterGames('btn-game');
+    filterGames('game-card'); 
     clickCounter++;
 
     clearTimeout(clickTimer);
@@ -136,9 +123,9 @@ btnTitleMenu.addEventListener('click', () => {
 });
 
 function miAccionSecreta() {
-    confettiGif.classList.remove('confetti-gif-hidden');
-    secretGame.classList.remove('secret-game');
+    confettiGif.classList.remove('confetti--hidden'); 
+    secretGame.classList.remove('game-card--secret'); 
     setTimeout(()=>{
-        confettiGif.classList.add('confetti-gif-hidden');
+        confettiGif.classList.add('confetti--hidden'); 
     },4000);
 }
