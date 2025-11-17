@@ -124,8 +124,10 @@ btnTitleMenu.addEventListener('click', () => {
 
 function miAccionSecreta() {
     confettiGif.classList.remove('confetti--hidden'); 
-    secretGame.classList.remove('game-card--secret'); 
+    secretGame.classList.remove('game-card--secret');
+    document.body.style.overflow = 'hidden';
     setTimeout(()=>{
         confettiGif.classList.add('confetti--hidden'); 
+        document.body.style.overflowY = 'scroll';
     },4000);
 }
