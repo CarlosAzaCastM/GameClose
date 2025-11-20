@@ -1,5 +1,5 @@
 body {
-    background-color: #282833; 
+    background-color: #1C1C21; 
     font-family: Arial, sans-serif;
 }
 
@@ -18,12 +18,12 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    padding-top: 89px; 
 }
 
 .play-card {
     width: 90%; 
     max-width: 800px; 
+    aspect-ratio: 16 / 9;
 }
 
 .play-card__window {
@@ -38,6 +38,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    aspect-ratio: 16 / 9;
     width: 100%;
     height: 100%;
     border: none; 
@@ -60,6 +61,7 @@ body {
     margin-top: 70px;
     cursor: pointer;
     user-select: none;
+    text-align: center;
     position: relative;
     z-index: 1010;
 }
@@ -122,13 +124,12 @@ body {
 
 .nav {
     width: 100%;
-    background: radial-gradient(at 47.966219997892225% 59.17791208933168%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%), radial-gradient(at 47.64933301345313% 82.3942086004094%, hsla(0, 6.25%, 18.823529411764707%, 1) 0%, hsla(0, 6.25%, 18.823529411764707%, 0) 100%), radial-gradient(at 95.4924348957064% 30.991218769813667%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 1) 0%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 0) 100%), radial-gradient(at 33.063428122547755% 63.915493762477546%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 1) 0%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 0) 100%), radial-gradient(at 15.148471558648247% 8.345630190076857%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%);
-    opacity: 50%;
-    position: fixed; 
-    top: 0;           
-    left: 0;          
+    background: linear-gradient(90deg,rgba(176, 62, 62, 0.91) 0%, rgba(28, 28, 33, 1) 60%);
+    position: sticky;
+    top: 0;                    
     z-index: 1000;
     transition: transform 0.3s ease-in-out;
+    opacity: 90%;
 }
 
 .nav--hidden {
@@ -139,6 +140,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 100px;
     list-style-type: none;
     cursor: pointer;
@@ -149,6 +151,7 @@ body {
 .nav__item {
     user-select: none;
     position: relative;
+    transition: transform .3s, padding .3s;
 }
 
 .nav__item::after{
@@ -168,7 +171,6 @@ body {
 .nav__item:hover{
     transform: scaleX(1.3);
     transition: .4s;
-    background-color: radial-gradient(at 47.966219997892225% 59.17791208933168%, rgb(28, 31, 33) 0%, hsla(192, 7%, 13%, 0) 100%), radial-gradient(at 47.64933301345313% 82.3942086004094%, hsla(0, 6.25%, 18.823529411764707%, 1) 0%, hsla(0, 10%, 14%, 0) 100%), radial-gradient(at 95.4924348957064% 30.991218769813667%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 1) 0%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 0) 100%), radial-gradient(at 33.063428122547755% 63.915493762477546%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 1) 0%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 0) 100%), radial-gradient(at 15.148471558648247% 8.345630190076857%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%);
     padding: 10px;
 }
 
@@ -188,8 +190,8 @@ body {
     margin-top: 50px;
     width: 100%;
     max-height: 10vh;
-    background: radial-gradient(at 47.966219997892225% 59.17791208933168%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%), radial-gradient(at 47.64933301345313% 82.3942086004094%, hsla(0, 6.25%, 18.823529411764707%, 1) 0%, hsla(0, 6.25%, 18.823529411764707%, 0) 100%), radial-gradient(at 95.4924348957064% 30.991218769813667%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 1) 0%, hsla(135.00000000000003, 5.454545454545454%, 43.13725490196079%, 0) 100%), radial-gradient(at 33.063428122547755% 63.915493762477546%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 1) 0%, hsla(195.99999999999997, 8.021390374331544%, 36.66666666666667%, 0) 100%), radial-gradient(at 15.148471558648247% 8.345630190076857%, hsla(195, 8.16326530612245%, 19.215686274509807%, 1) 0%, hsla(195, 8.16326530612245%, 19.215686274509807%, 0) 100%);
-    opacity: 50%;
+    background: linear-gradient(-90deg,rgba(176, 62, 62, 0.91) 0%, rgba(28, 28, 33, 1) 60%);
+    opacity: 90%;
 }
 
 .footer__flex {
